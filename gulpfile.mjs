@@ -18,6 +18,10 @@ function library() {
         .pipe(gulp.dest('templates/lib'));
 }
 
+function getfile() {
+    return gulp.src(['./src/views/getfile.php'])
+        .pipe(gulp.dest('./templates'));
+}
 
 function styles() {
     return gulp.src('./src/scss/**/*.scss')
@@ -65,4 +69,4 @@ function clean() {
     return del(['templates/**/*', '!templates/images', '!templates/images/**/*']);
 }
 
-export default gulp.series(clean, gulp.parallel(library, styles, scripts, images, views), watch);
+export default gulp.series(clean, gulp.parallel(library, getfile, styles, scripts, images, views), watch);
