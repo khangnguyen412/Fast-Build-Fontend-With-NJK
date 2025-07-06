@@ -1,6 +1,6 @@
 # Source for fast build template
 ## Description
-- Use for fastbuild html, css, js for wordpress by Pug file
+- Use for fastbuild html, css, js for wordpress by NJK file
 
 ## Require
 - Node >= 16.x

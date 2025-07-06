@@ -7,8 +7,10 @@
   </head>
   <body>
     {% include 'partials/header.njk' %}
-    <p>đây là đoạn văn<p>
-    {% include 'partials/footer.njk' %}   
+    {% for i in range(1, 7) %}
+      <div class="item">Item {{ i }}</div>
+    {% endfor %}
+    {% include 'partials/footer.njk' %}
   </body>
   <script src="/js/main.js"></script>
 </html>
