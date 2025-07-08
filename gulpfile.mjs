@@ -41,7 +41,7 @@ function scripts() {
 }
 
 function images() {
-    return gulp.src('./src/images/**/*')
+    return gulp.src('./src/images/**/*', { encoding: false })
         .pipe(imagemin())
         .pipe(gulp.dest('./templates/images'));
 }

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Website</title>
+    {% include 'partials/styles.njk' %} 
+    <link rel="stylesheet" href="/css/home.css"/>
   </head>
   <body>
     {% include 'partials/header.njk' %}
+    <main class="home-page"></main>
     {% include 'partials/footer.njk' %}
   </body>
+  {% include 'partials/scripts.njk' %}
 </html>
