@@ -11,10 +11,12 @@
 ```
 npm install 
 ```
+
 - Install gulp cli:
 ```
 npm install --global gulp-cli
 ```
+
 - Install gulp package (don't need run these command after GitClone this, just use for create the source): 
 ```
 npm install --save-dev gulp
@@ -30,10 +32,12 @@ npm install --save-dev gulp-htmlmin
 npm install --save-dev gulp-nunjucks-render
 npm install --save-dev del
 ```
+
 - Run the command below to use:
 ```
 gulp
 ```
+
 - Install format and snipet for .njk
     - Use this extendsion: eseom.nunjucks-template
     - Ctrl + Shift + P and input "Open User Settings (JSON)" add below command into json:
@@ -51,4 +55,12 @@ gulp
     },
 },
 ```
+
+- Use import styles, script, images:
+    - Import css, script to html use ( ./ ) before the path.
+    - Import images in css use ( ../ or ../../ ) before the path.
+    - Use ./ for style and script If you are in ./src path.
+    - Use ../ the for background-image in style scss If you are in ./src path.
+    - Use ../../ the for background-image in style scss If you are in ./src/..
+
 The source was set up by KhangNguyen — do not copy

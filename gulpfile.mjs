@@ -15,7 +15,8 @@ const sassCompiler = gulpSass(sass);
 
 function library() {
     return gulp.src(['./src/lib/**/*'])
-        .pipe(gulp.dest('templates/lib'));
+        .pipe(gulp.dest('templates/lib'))
+        .pipe(browserSync.stream());
 }
 
 function getfile() {
@@ -26,16 +27,13 @@ function getfile() {
 function styles() {
     return gulp.src('./src/scss/**/*.scss')
         .pipe(sassCompiler().on('error', sassCompiler.logError))
-        .pipe(autoprefixer())
-        .pipe(cleanCSS())
+        .pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'], cascade: false }))
         .pipe(gulp.dest('./templates/css'))
         .pipe(browserSync.stream());
 }
 
 function scripts() {
     return gulp.src('./src/js/**/*.js')
-        .pipe(concat('main.js'))
-        .pipe(uglify())
         .pipe(gulp.dest('./templates/js'))
         .pipe(browserSync.stream());
 }
@@ -47,7 +45,7 @@ function images() {
 }
 
 function views() {
-    return gulp.src([ 'src/views/*.njk', '!src/views/layouts/*.njk', '!src/views/partials/*.njk' ])
+    return gulp.src([ 'src/views/*.njk', '!src/views/layouts/*.njk', '!src/views/partials/*.njk', '!src/views/blocks/*.njk'])
         .pipe(nunjucksRender({ path: ['src/views/'] }))
         .pipe(gulp.dest('templates'));
 
